@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.32.1
+  '@sanity/client': ^5.4.2
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.15.0
   '@typescript-eslint/eslint-plugin': ^5.57.0
@@ -27,6 +28,7 @@ specifiers:
   vite: ^4.2.1
 
 dependencies:
+  '@sanity/client': 5.4.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-is: 18.2.0
