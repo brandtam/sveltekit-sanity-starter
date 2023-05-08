@@ -21,9 +21,13 @@ Clone the repo or use the template button on Github. CD into the project and ins
 pnpm install
 ```
 
-## Developing
+## Development
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+---
+
+Once you've created a project and installed dependencies with you can run the development server locally to view the project.
+
+---
 
 ```bash
 # start the server
@@ -32,6 +36,12 @@ pnpm dev
 # or start the server and open the app in a new browser tab
 pnpm dev --open
 ```
+
+## Sanity Studio
+
+The Sanity Studio is embedded in the project and can be accessed at `/studio`. You can also run the studio locally by running the following command.
+
+You can build the schemas at `src/lib/sanity/schemas`.
 
 ## Building
 
