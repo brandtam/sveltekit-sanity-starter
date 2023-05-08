@@ -12,8 +12,6 @@ This part is a little bit clumsy as I'm writing this. I'm working on a better wa
 
 Change the name of the `.env.example` file to `.env` and add your Sanity Project ID to the file for VITE_SANITY_PROJECT_ID.
 
-````bash
-
 ## Creating the project
 
 Clone the repo or use the template button on Github. CD into the project and install the dependencies using the package manager of your choice. I'll be using `pnpm` for this example.
@@ -21,7 +19,7 @@ Clone the repo or use the template button on Github. CD into the project and ins
 ```bash
 # install packages
 pnpm install
-````
+```
 
 ## Developing
 
