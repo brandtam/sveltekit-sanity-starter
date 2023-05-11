@@ -2,16 +2,6 @@
 
 Everything you need to build a Sveltekit Project powered by an embedded [`Sanity Studio`](https://sanity.io), it includes TailwindCSS for fun.
 
-## Creating a Sanity Project
-
-https://www.sanity.io/docs/create-a-sanity-project
-
-This part is a little bit clumsy as I'm writing this. I'm working on a better way to do this. For now, you'll need to create a new Sanity project and then copy the project ID into the `.env` file in the root of the project.
-
-## Add Environment Variables
-
-Change the name of the `.env.example` file to `.env` and add your Sanity Project ID to the file for VITE_SANITY_PROJECT_ID.
-
 ## Creating the project
 
 Clone the repo or use the template button on Github. CD into the project and install the dependencies using the package manager of your choice. I'll be using `pnpm` for this example.
@@ -20,6 +10,30 @@ Clone the repo or use the template button on Github. CD into the project and ins
 # install packages
 pnpm install
 ```
+
+## Setup the Sanity Studio
+
+https://www.sanity.io/docs/create-a-sanity-project
+
+```bash
+pnpm create sanity@latest init --env
+```
+
+This will:
+
+1. Ask you to select or create a Sanity project and dataset
+2. Output a `.env` file with some environment variables
+
+- SANITY_PROJECT_ID="xxxxxx"
+- SANITY_DATASET="production"
+
+## Add Environment Variables
+
+1. Copy the contents of the `.env.example` file to `.env` after the Sanity environment variables.
+2. Replace the values for
+
+- VITE_SANITY_PROJECT_ID="xxxxxx" with the SANITY_PROJECT_ID variable and delete the SANITY_PROJECT_ID variable.
+- VITE_SANITY_DATASET="production" with the SANITY_DATASET variable and delete the SANITY_DATASET variable.
 
 ## Development
 
@@ -37,11 +51,15 @@ pnpm dev
 pnpm dev --open
 ```
 
+Note: You will see that there is an error on the homepage because it's pulling data from Sanity. You can fix this by creating the content in Sanity Studio.
+
 ## Sanity Studio
 
-The Sanity Studio is embedded in the project and can be accessed at `/studio`. You can also run the studio locally by running the following command.
+The Sanity Studio is embedded in the project and can be accessed at `/studio`.
 
-You can build the schemas at `src/lib/sanity/schemas`.
+Once you have logged into your studio you need to add a Greeting inside the Settings Singleton. This will fix the error on the homepage.
+
+You can build more schemas at `src/lib/sanity/schemas`.
 
 ## Building
 
