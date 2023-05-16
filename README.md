@@ -51,13 +51,11 @@ pnpm dev
 pnpm dev --open
 ```
 
-Note: You will see that there is an error on the homepage because it's pulling data from Sanity. You can fix this by creating the content in Sanity Studio.
-
 ## Sanity Studio
 
 The Sanity Studio is embedded in the project and can be accessed at `/studio`.
 
-Once you have logged into your studio you need to add a Greeting inside the Settings Singleton. This will fix the error on the homepage.
+Once you have logged into your studio look at Settings -> Greeting to see the default greeting. You can change this in the Sanity Studio and it will update the app.
 
 You can build more schemas at `src/lib/sanity/schemas`.
 

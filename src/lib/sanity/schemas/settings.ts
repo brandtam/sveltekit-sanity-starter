@@ -6,7 +6,8 @@ export default {
 		{
 			name: 'greeting',
 			title: 'Greeting',
-			type: 'string'
+			type: 'string',
+			initialValue: 'This content is coming from Sanity!'
 		}
 	]
 };
