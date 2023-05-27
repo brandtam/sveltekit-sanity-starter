@@ -13,8 +13,6 @@ export const load = (async () => {
 			data[0].greeting = defaultGreeting;
 		}
 
-		console.log(`data: ${JSON.stringify(data[0])}`);
-
 		return {
 			settings: data
 		};
