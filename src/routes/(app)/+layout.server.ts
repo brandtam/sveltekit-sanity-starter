@@ -3,12 +3,18 @@ import { client } from '$lib/utils/sanity';
 
 export const load = (async () => {
 	const data = await client.fetch(`*[_type == "settings"]`);
+	const defaultGreeting =
+		"You haven't added any content to Sanity yet. Visit /studio and add content to the Settings->Greeting";
 
 	if (data) {
-		if (data.length === 0 || !data[0].greeting) {
-			data[0].greeting =
-				"You haven't added any content to Sanity yet. Visit /studio and add content to the Settings->Greeting";
+		if (data.length === 0) {
+			data.push({ greeting: defaultGreeting });
+		} else if (!data[0].greeting) {
+			data[0].greeting = defaultGreeting;
 		}
+
+		console.log(`data: ${JSON.stringify(data[0])}`);
+
 		return {
 			settings: data
 		};
